@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Healthcare Facilities Map | Rawalpindi & Islamabad</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Healthcare Facilities Map</h1>
+    <p>
+      <strong>Study area:</strong> Rawalpindi and Islamabad, Pakistan. This map shows hospitals,
+      clinics, pharmacies and doctors' offices retrieved live from OpenStreetMap through the Overpass API.
+    </p>
+  </header>
+
+  <main>
+    <aside id="panel">
+      <div class="controls">
+        <label for="search">Search by name</label>
+        <input id="search" type="search" placeholder="e.g. Holy Family, Shifa, Fazal">
+
+        <label for="category">Facility type</label>
+        <select id="category">
+          <option value="all">All types</option>
+          <option value="hospital">Hospitals</option>
+          <option value="clinic">Clinics</option>
+          <option value="pharmacy">Pharmacies</option>
+          <option value="doctors">Doctors</option>
+        </select>
+
+        <label for="city">Area</label>
+        <select id="city">
+          <option value="all">Rawalpindi + Islamabad</option>
+          <option value="rawalpindi">Rawalpindi</option>
+          <option value="islamabad">Islamabad</option>
+        </select>
+
+        <div class="buttons">
+          <button id="locate" type="button">Find near me</button>
+          <button id="reset" type="button">Reset</button>
+        </div>
+      </div>
+
+      <div id="status" role="status" aria-live="polite"></div>
+      <ul id="results"></ul>
+    </aside>
+
+    <div id="map-wrap">
+      <div id="map"></div>
+      <div id="loader" class="hidden"><div class="spinner"></div><span>Loading data...</span></div>
+      <div id="legend"></div>
+    </div>
+  </main>
+
+  <footer>
+    Data source: &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>
+    (ODbL) via the <a href="https://overpass-api.de/" target="_blank" rel="noopener">Overpass API</a>.
+    Map library: <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>.
+    No API key is required.
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
